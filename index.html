@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NMC</title>
+<style>
+    body {
+        background-color: #153263; /* Azul Escuro */
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+    }
+    .search-bar {
+        background-color: #ffffff; /* Branco */
+        border: 3px solid #f1c40f; /* Amarelo */
+        border-radius: 5px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .search-bar input[type="text"] {
+        flex: 1;
+        border: none;
+        padding: 5px;
+        font-size: 16px;
+    }
+    /* Estilo para o botão de pesquisa */
+    .search-button {
+        background-color: #f1c40f; /* Amarelo */
+        border: none;
+        color: #ffffff; /* Branco */
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 40px; /* Define a largura do botão */
+        height: 40px; /* Define a altura do botão */
+        display: flex; /* Ativa flexbox para centralizar o ícone verticalmente */
+        align-items: center; /* Centraliza o ícone verticalmente */
+        justify-content: center; /* Centraliza o ícone horizontalmente */
+        transition: box-shadow 0.3s, background-color 0.3s; /* Adiciona transição suave para a sombra e cor de fundo */
+    }
+    .search-bar .search-button:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra quando o mouse passa por cima */
+    }
+    .search-bar .search-button:active {
+        background-color: #ba9713; /* Amarelo mais escuro quando clicado */
+        box-shadow: none; /* Remove a sombra quando clicado */
+    }
+    .options {
+        display: flex;
+        justify-content: space-between;
+    }
+    .option {
+        background-color: #f1c40f; /* Amarelo */
+        border: none;
+        color: #000000; /* Preto */
+        padding: 15px 10px; /* Reduz a largura dos botões */
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 20px;
+        flex: 1; /* Ocupa a mesma largura dentro do flex container */
+        margin-right: 10px; /* Adiciona espaço entre os botões */
+        transition: box-shadow 0.3s, background-color 0.3s; /* Adiciona transição suave para a sombra e cor de fundo */
+    }
+    .option:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra quando o mouse passa por cima */
+    }
+    .option:active {
+        background-color: #ba9713; /* Amarelo mais escuro quando clicado */
+        box-shadow: none; /* Remove a sombra quando clicado */
+    }
+    .option.send {
+        color: black;
+    }
+    .option.upload {
+        color: black;
+    }
+    .option.delete {
+        color: black;
+    }
+    .option.read {
+        color: black;
+    }
+    @media (max-width: 600px) {
+        .option {
+            width: 100%;
+        }
+    }
+    .logo {
+        width: 100px;
+        height: auto;
+        position: absolute;
+        left: -110px; /* Posição fora da barra de pesquisa */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* Estilo para remover a borda de foco do botão de pesquisa */
+    .search-button:focus {
+        outline: none;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="search-bar">
+        <img src="images.jpeg" alt="Noble Manhattan Coaching" class="logo">
+        <input type="text" placeholder="Search...">
+        <!-- Usando uma div em vez de um botão para o ícone de pesquisa -->
+        <div class="search-button" onclick="removeFocus()"><img src="https://emojicdn.elk.sh/🔍" alt="Lupa" width="20"></div>
+    </div>
+    <div class="options">
+        <button class="option send">Send</button>
+        <button class="option upload">Read</button>
+        <button class="option delete">Upload</button>
+        <button class="option read">Delete</button>
+    </div>
+</div>
+
+<script>
+function removeFocus() {
+    document.activeElement.blur();
+}
+</script>
+
+</body>
+</html>
